@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import Ratting from '../components/Ratting';
 
 const title = 'Our Products';
 
@@ -79,6 +82,10 @@ const ProductData = [
 
 const CategoryShowCase = () => {
   const [items, setItems] = useState(ProductData);
+
+  // category baded filtering
+  const filterItem = () => {};
+
   return (
     <div className="course-section style-3 padding-tb">
       {/* shapes */}
@@ -94,6 +101,52 @@ const CategoryShowCase = () => {
         {/* section header */}
         <div className="section-header">
           <h2 className="title">{title}</h2>
+          <div className="course-filter-group">
+            <ul className="lab-ul">
+              <li onClick={() => filterItem('All')}>All</li>
+              <li onClick={() => filterItem('Shoes')}>Shoes</li>
+              <li onClick={() => filterItem('Bags')}>Bags</li>
+              <li onClick={() => filterItem('Phones')}>Phones</li>
+              <li onClick={() => filterItem('Beauty')}>Beauty</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* section body */}
+        <div className="section-wrapper">
+          <div>
+            {items.map((product) => (
+              <div key={product.id} className="col">
+                <div className="course-item style-4">
+                  <div className="course-inner">
+                    <div className="course-thubm">
+                      <img src={product.imgUrl} alt="" />
+                      <div className="course-category">
+                        <div className="course-cate">
+                          <a href="#">{product.cate}</a>
+                        </div>
+                        <div className="course-reiew">
+                          <Ratting />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* content */}
+                    <div className="course-content">
+                      <Link to={`/shop/${product.id}`}>{product.title}</Link>
+                      <div className="course-footer">
+                        <div className="course-author">
+                          <Link to="/" className="ca-name">
+                            {product.brand}
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
