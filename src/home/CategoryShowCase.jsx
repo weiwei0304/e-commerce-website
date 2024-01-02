@@ -114,12 +114,12 @@ const CategoryShowCase = () => {
 
         {/* section body */}
         <div className="section-wrapper">
-          <div>
+          <div className="row g-4 justify-content-center row-cols-xl-4 row-cols-md-2 row-cols-1 course-filter">
             {items.map((product) => (
               <div key={product.id} className="col">
                 <div className="course-item style-4">
                   <div className="course-inner">
-                    <div className="course-thubm">
+                    <div className="course-thumb">
                       <img src={product.imgUrl} alt="" />
                       <div className="course-category">
                         <div className="course-cate">
@@ -133,13 +133,16 @@ const CategoryShowCase = () => {
 
                     {/* content */}
                     <div className="course-content">
-                      <Link to={`/shop/${product.id}`}>{product.title}</Link>
+                      <Link to={`/shop/${product.id}`}>
+                        <h6>{product.title}</h6>
+                      </Link>
                       <div className="course-footer">
                         <div className="course-author">
                           <Link to="/" className="ca-name">
                             {product.brand}
                           </Link>
                         </div>
+                        <div className="course-price">{product.price}</div>
                       </div>
                     </div>
                   </div>
