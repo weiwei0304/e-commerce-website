@@ -5,6 +5,7 @@ import Banner from './Banner';
 import HomeCategory from './HomeCategory';
 import CategoryShowCase from './CategoryShowCase';
 import Register from './Register';
+import LocationSprade from './LocationSprade';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <HomeCategory />
       <CategoryShowCase />
       <Register />
+      <LocationSprade />
     </div>
   );
 };
