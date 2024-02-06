@@ -12,7 +12,19 @@ const Pagination = ({
     pageNumber.push(i);
   }
   return (
-    <ul className="default-pagination">
+    <ul className="default-pagination lab-ul">
+      <li>
+        <a
+          href="#"
+          onClick={() => {
+            if (activePage < pageNumber.length) {
+              paginate(activePage - 1);
+            }
+          }}
+        >
+          <i className="icofont-rounded-left"></i>
+        </a>
+      </li>
       {pageNumber.map((number) => (
         <li
           key={number}
