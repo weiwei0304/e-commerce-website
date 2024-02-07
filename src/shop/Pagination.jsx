@@ -35,6 +35,18 @@ const Pagination = ({
           </button>
         </li>
       ))}
+      <li>
+        <a
+          href="#"
+          onClick={() => {
+            if (activePage < pageNumber.length) {
+              paginate(activePage + 1);
+            }
+          }}
+        >
+          <i className="icofont-rounded-right"></i>
+        </a>
+      </li>
     </ul>
   );
 };
