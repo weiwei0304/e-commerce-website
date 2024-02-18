@@ -26,6 +26,8 @@ const Shop = () => {
     setCurrentPage(pageNumber);
   };
 
+  // filter products based on category
+
   return (
     <div>
       <PageHeader title="Our Shop Page" curPage="Shop" />
