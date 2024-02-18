@@ -4,6 +4,7 @@ import ProductCard from './ProductCard';
 import Data from '../products.json';
 import Pagination from './Pagination';
 import Search from './Search';
+import ShopCategory from './ShopCategory';
 
 const showResults = 'Showing 01 - 12 of 139 Results';
 
@@ -67,6 +68,7 @@ const Shop = () => {
             <div className="col-lg-4 col-12">
               <aside>
                 <Search products={products} gridList={gridList} />
+                <ShopCategory />
               </aside>
             </div>
           </div>
