@@ -27,7 +27,17 @@ const Shop = () => {
   };
 
   // filter products based on category
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const menuItems = [...new Set(Data.map((Val) => Val.category))];
 
+  const filterItem = (curcat) => {
+    const newItem = Data.filter((newVal) => {
+      return newVal.category === curcat;
+    });
+
+    setSelectedCategory(curcat);
+    setProducts(newItem);
+  };
   return (
     <div>
       <PageHeader title="Our Shop Page" curPage="Shop" />
@@ -70,7 +80,13 @@ const Shop = () => {
             <div className="col-lg-4 col-12">
               <aside>
                 <Search products={products} gridList={gridList} />
-                <ShopCategory />
+                <ShopCategory
+                  filterItem={filterItem}
+                  setItem={setProducts}
+                  menuItems={menuItems}
+                  setProducts={setProducts}
+                  selectedCategory={selectedCategory}
+                />
               </aside>
             </div>
           </div>
