@@ -5,6 +5,7 @@ import Data from '../products.json';
 import Pagination from './Pagination';
 import Search from './Search';
 import ShopCategory from './ShopCategory';
+import PopularPost from './PopularPost';
 
 const showResults = 'Showing 01 - 12 of 139 Results';
 
@@ -87,6 +88,7 @@ const Shop = () => {
                   setProducts={setProducts}
                   selectedCategory={selectedCategory}
                 />
+                <PopularPost />
               </aside>
             </div>
           </div>
