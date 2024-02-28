@@ -14,19 +14,9 @@ const ShopCategory = ({
         <h5 className="ms-2">All Categories</h5>
       </div>
       <div>
-        <button
-          className={`m-2 ${selectedCategory === 'All' ? 'bg-warning' : ''}`}
-          onClick={() => setItem(Data)}
-        >
-          All
-        </button>
         {menuItems.map((Val, id) => {
           return (
-            <button
-              key={id}
-              className={`m-2 ${selectedCategory === Val ? 'bg-warning' : ''}`}
-              onClick={() => filterItem(Val)}
-            >
+            <button className={`m-2`} key={id}>
               {Val}
             </button>
           );
