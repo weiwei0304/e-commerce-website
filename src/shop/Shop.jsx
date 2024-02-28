@@ -6,13 +6,14 @@ import Pagination from './Pagination';
 import Search from './Search';
 import ShopCategory from './ShopCategory';
 import PopularPost from './PopularPost';
+import Tags from './Tags';
 
 const showResults = 'Showing 01 - 12 of 139 Results';
 
 const Shop = () => {
   const [gridList, setGridList] = useState(true);
   const [products, setProducts] = useState(Data);
-  console.log(products);
+  // console.log(products);
 
   // pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -89,6 +90,7 @@ const Shop = () => {
                   selectedCategory={selectedCategory}
                 />
                 <PopularPost />
+                <Tags />
               </aside>
             </div>
           </div>
