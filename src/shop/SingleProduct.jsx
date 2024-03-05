@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
+import Review from './Review';
+import Tags from './Tags';
 
 // 套件
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -8,6 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
 import ProductDisplay from './ProductDisplay';
+import PopularPost from './PopularPost';
 
 const SingleProduct = () => {
   const [product, setProduct] = useState([]);
@@ -81,12 +84,19 @@ const SingleProduct = () => {
                 </div>
 
                 {/* reviews */}
-                <div className="review">Reviews</div>
+                <div className="review">
+                  <Review />
+                </div>
               </article>
             </div>
 
             {/* right side */}
-            <div className="col-lg-4 col-12">Right Side</div>
+            <div className="col-lg-4 col-12">
+              <aside className="ps-lg-4">
+                <PopularPost />
+                <Tags />
+              </aside>
+            </div>
           </div>
         </div>
       </div>
